@@ -1,0 +1,295 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}
+
+% Statut helper
+\newcommand{\statut}[3]{\par\smallskip\noindent\textit{Conditions :} #1\quad\textbf{Statut :} #2\quad\textit{Étape :} #3\par\medskip}
+
+\title{\textbf{Substrat battant : recueil de propositions}\\[2pt]\large Énoncés, conditions et statut honnête}
+\author{Nicolas Roux \\ \small avec assistance computationnelle}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Convention de statut.} Chaque proposition porte l'un des statuts suivants :
+\begin{description}[leftmargin=2.2cm,style=nextline,itemsep=1pt]
+  \item[\textbf{Forcé}] résultat sans paramètre d'ajustement, non bâti à la main : compté comme signal.
+  \item[\textbf{Conditionnel}] tient sous une construction explicitement posée (souvent une re-description d'une physique connue) ; non compté comme preuve indépendante.
+  \item[\textbf{Adopté}] admis, non dérivé.
+  \item[\textbf{Ouvert}] non établi par le cadre.
+\end{description}
+
+\noindent\textbf{Objet unique.} Toutes les propositions sont construites sur le gradient de phase $\nabla\theta$ d'un substrat battant, séparé en observable et latent par une résolution finie (le \emph{crénelage}).
+
+\bigskip
+
+\section*{Arc 1 — De la phase au champ}
+
+\begin{prop}[Polarité de type Coulomb]
+Le gradient de phase porte une interaction quasi-statique : phases semblables se repoussent, opposées s'attirent, avec un potentiel $V(r)\propto 1/r$ en trois dimensions.
+\end{prop}
+\statut{couplage de phase quasi-statique}{Conditionnel}{S25}
+
+\begin{prop}[Porteur longue-portée de Goldstone]
+Pour un couplage de phase pur (sans terme de masse), le mode de Goldstone est sans gap : la corrélation décroît logarithmiquement et la portée est infinie,
+\[ C(r)\sim \ln r,\qquad \text{(gapless)} ; \]
+un terme de masse $h\neq 0$ rétablit une décroissance exponentielle $C(r)\sim e^{-r/\xi}$. Le porteur longue-portée \emph{est} la phase.
+\end{prop}
+\statut{théorème de Goldstone, symétrie continue non brisée explicitement}{Forcé}{S27}
+
+\section*{Arc 2 — Criticité superfluide}
+
+\begin{prop}[Potentiel quantique de Madelung]
+Un champ d'onde conservatif $\psi=\sqrt{\rho}\,e^{iS/\hbar}$ porte le potentiel quantique
+\[ Q=-\frac{\hbar^2}{2m}\,\frac{\nabla^2\sqrt{\rho}}{\sqrt{\rho}}, \]
+et un paquet s'étale conformément à l'équation de Schrödinger.
+\end{prop}
+\statut{dynamique de Schrödinger utilisée}{Conditionnel}{S29}
+
+\begin{prop}[Transition de Kosterlitz--Thouless]
+À basse température la fonction de corrélation est en loi de puissance $C(r)\sim r^{-\eta}$ ; à la transition l'exposant atteint la valeur universelle
+\[ \eta = \tfrac{1}{4}. \]
+La criticité réalise l'invariance d'échelle (auto-similarité).
+\end{prop}
+\statut{substrat porté à la criticité (sélection de $T_{\mathrm{KT}}$)}{Forcé (exposant universel)}{S31}
+
+\begin{prop}[Saut universel de rigidité superfluide]
+La rigidité superfluide $\rho_s$ présente le saut universel de Nelson--Kosterlitz à la transition,
+\[ \frac{\rho_s}{T}\Big|_{T_{\mathrm{KT}}^-}=\frac{2}{\pi}. \]
+La phase critique du substrat \emph{est} un superfluide bidimensionnel.
+\end{prop}
+\statut{criticité}{Forcé (valeur universelle)}{S33}
+
+\section*{Arc 3 — Relativité et gravité analogue}
+
+\begin{prop}[Cône de lumière]
+Le battement \emph{conservatif} donne une dispersion linéaire,
+\[ \omega = c\,|k|,\qquad c\approx 1, \]
+là où une dynamique relaxationnelle donnerait une diffusion $\omega\sim -i\,Dk^2$. La cinématique relativiste est une conséquence du caractère conservatif.
+\end{prop}
+\statut{battement interne conservant l'énergie}{Forcé}{S34}
+
+\begin{prop}[Métrique acoustique]
+Un écoulement superfluide de vitesse $\mathbf v$ incline le cône : les perturbations suivent une métrique acoustique effective
+\[ ds^2=-\big(c^2-v^2\big)dt^2-2\,\mathbf v\!\cdot\! d\mathbf x\,dt+d\mathbf x^2, \]
+avec horizon là où $v>c$ (gravité analogue).
+\end{prop}
+\statut{analogie ; flot imposé}{Conditionnel}{S35}
+
+\section*{Arc 4 — Masse et onde de matière}
+
+\begin{prop}[Masse comme gap : sine-Gordon]
+La quantification par contact donne la dispersion massive
+\[ \omega^2=c^2k^2+m^2, \]
+la masse étant le gap. Le kink-soliton a une masse au repos finie, une énergie $E(v)=\gamma M$ et subit la contraction de Lorentz.
+\end{prop}
+\statut{potentiel sine-Gordon choisi}{Conditionnel}{S36}
+
+\begin{prop}[Relation de de Broglie]
+La dualité onde/contact impose l'identité exacte entre vitesse de phase et vitesse de groupe,
+\[ v_\varphi\, v_g = c^2,\qquad \omega^2-k^2=m^2, \]
+soit l'axiome de résolution sous forme relativiste-quantique.
+\end{prop}
+\statut{aucune ; identité}{Forcé}{S37}
+
+\section*{Arc 5 — Mesure quantique}
+
+\begin{prop}[Cohérence de Born]
+La densité $\rho=|\psi|^2$ est la densité conservée transportée par l'écoulement de phase :
+\[ \partial_t\rho+\nabla\!\cdot\! \mathbf j=0,\qquad \mathbf j=\rho\,\nabla S/m, \]
+conservée à la précision machine, avec Ehrenfest exact. Le \emph{résultat stochastique} de Born est adopté.
+\end{prop}
+\statut{règle de Born adoptée ; $\hbar$ axiomatique}{Adopté / Conditionnel}{S38}
+
+\begin{prop}[Schrödinger linéaire comme limite diluée]
+Pour le fluide quantique $i\,\partial_t\psi=-\tfrac12\nabla^2\psi+g|\psi|^2\psi$, la violation de superposition vérifie
+\[ \varepsilon(g=0)\approx 10^{-14}\ \text{(exacte)},\qquad \varepsilon(g)\propto g. \]
+La mécanique quantique \emph{linéaire} est dérivée comme la limite diluée $g\to 0$.
+\end{prop}
+\statut{limite diluée du modèle de Gross-Pitaevskii}{Forcé (à $g\to0$) / Conditionnel}{S48}
+
+\section*{Arc 6 — Magnitude de la gravité}
+
+\begin{prop}[Newton et principe d'équivalence]
+Avec un médiateur sans gap, la force entre kinks est
+\[ F=\frac{G_{\mathrm{eff}}\,M_1M_2}{r^2},\qquad G_{\mathrm{eff}}=\frac{\lambda^2}{4\pi}, \]
+en trois dimensions (à quelques pour cent), avec chute universelle (principe d'équivalence).
+\end{prop}
+\statut{couplage $\lambda$ ; médiateur de Goldstone}{Conditionnel (couplage) ; universalité Forcée}{S41}
+
+\begin{prop}[Einstein conique exact en 2+1]
+Une disclination est un cône et reproduit exactement le point-masse d'Einstein : la déflexion
+\[ \delta=\pi\,\frac{1-\alpha}{\alpha},\qquad \delta=8\pi G M, \]
+est \emph{indépendante du paramètre d'impact} (Deser--Jackiw--'t Hooft).
+\end{prop}
+\statut{aucune ; exact}{Forcé}{S45}
+
+\begin{prop}[Facteur post-newtonien]
+La déflexion lumineuse est $\propto(1+\gamma)$. Un substrat scalaire seul donne $\gamma=0$ (moitié d'Einstein) ; $\gamma=1$ (Einstein) est atteignable via le cisaillement.
+\end{prop}
+\statut{identification de la source}{Conditionnel}{S42--44}
+
+\begin{prop}[Porteur de spin-2]
+Le tenseur de déformation se décompose en une trace (spin-0) et une partie sans trace (spin-2) ; cette dernière tourne avec l'hélicité $\pm2$,
+\[ s=\tfrac12(\varepsilon_{xx}-\varepsilon_{yy})+i\,\varepsilon_{xy}\ \longrightarrow\ e^{2i\phi}s. \]
+Le phonon transverse du secteur cristallin est ce mode spin-2 propageant.
+\end{prop}
+\statut{aucune (structure tensorielle)}{Forcé}{S54}
+
+\section*{Arc 7 — Matière fermionique}
+
+\begin{prop}[Statistique et spin par attachement de flux]
+L'holonomie d'Aharonov--Bohm d'un composite charge--flux est topologique. L'attachement d'un quantum de flux ($q\Phi=2\pi$) donne la phase d'échange
+\[ \theta=\frac{q\Phi}{2}=\pi\quad\Rightarrow\quad \text{fermion},\qquad \text{spin}=\frac{q\Phi}{4\pi}=\tfrac12. \]
+\end{prop}
+\statut{physique des anyons / Chern-Simons ; ingrédients fournis par le substrat}{Conditionnel ; topologie Forcée}{S49}
+
+\begin{prop}[Équation de Dirac en 1+1D]
+Un mobile-à-$c$ qui rebrousse (la masse étant le taux de rebroussement) reproduit Dirac : $H(k)=k\,\sigma_z+m\,\sigma_x$, valeurs propres $\pm\sqrt{k^2+m^2}$, vitesse de groupe
+\[ v_g=\frac{k}{\sqrt{k^2+m^2}}<c, \]
+le spineur à deux composantes émergeant des deux chiralités.
+\end{prop}
+\statut{construction 1+1D (damier de Feynman)}{Conditionnel}{S51}
+
+\begin{prop}[Spin-½ forcé par la factorisation minimale]
+Exiger la racine carrée du premier ordre minimale de l'opérateur d'onde force l'algèbre de Clifford
+\[ \{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu},\qquad (\gamma^\mu k_\mu)^2=(k_0^2-|\mathbf k|^2)\,\mathbb{I}, \]
+les valeurs propres de spin $\pm\tfrac12$ et la double-couverture $4\pi$ ($U(2\pi)=-\mathbb{I}$, $U(4\pi)=+\mathbb{I}$) ; une solution scalaire est impossible. Le même principe singularise le graviton (unicité de Weinberg--Deser).
+\end{prop}
+\statut{principe de minimalité (chemin le plus court), adopté}{Forcé (sous ce principe)}{S56}
+
+\section*{Arc 8 — Cosmologie}
+
+\begin{prop}[Constante cosmologique dynamique]
+Un vide scalaire qui roule, $V=V_0e^{-\lambda\phi}$ avec $H$ auto-cohérent, donne une équation d'état
+\[ w=\frac{\lambda^2}{3}-1>-1, \]
+et une densité décroissante (quintessence), contre $w=-1$ et $\rho$ constante pour une vraie constante.
+\end{prop}
+\statut{forme de potentiel choisie}{Conditionnel}{S50}
+
+\begin{prop}[$\Lambda$ dépendant de la taille / résolution]
+La tension de rétroaction confinée (Casimir) vérifie
+\[ E_{\mathrm{C}}\cdot L=-\frac{\pi}{24}\ \Rightarrow\ \rho_\Lambda\propto \frac{1}{L^2}, \]
+et de même $\propto 1/a^2$ avec la résolution $a$ : négligeable vers le grand infini, redoutable vers le petit. (Énergie sombre de type Casimir / holographique.)
+\end{prop}
+\statut{aucune (scaling) ; magnitude non fixée}{Forcé (scaling)}{S53, S55}
+
+\begin{prop}[Point fixe trans-résolution]
+Le substrat critique est un point fixe invariant d'échelle du flux de renormalisation (pente spectrale $\sim-2$ préservée sous coarse-graining) ; l'essentiel de l'énergie réside dans les modes sous-résolution (candidat sombre conceptuel).
+\end{prop}
+\statut{flux de renormalisation ; identification sombre conceptuelle}{Forcé (point fixe) / Conditionnel (sombre)}{S55}
+
+\section*{Arc 9 — Consolidation : gravité fine, électromagnétisme, cosmologie latente}
+
+\begin{prop}[Borne de stabilité du mode spin-2]
+Pour que le mode spin-2 (cisaillement) soit le graviton, il doit voyager à la vitesse de la lumière, $c_T=c_L$. Or, en élasticité isotrope,
+\[ \frac{c_T^2}{c_L^2}=\frac{\mu}{\lambda+2\mu}<1\quad\text{dès que}\quad K=\lambda+\tfrac{2}{3}\mu>0, \]
+et $c_T=c_L$ exige $\lambda=-\mu$, soit un module de compression $K=-\mu/3<0$ (instable). Dans tout substrat stable, le spin-2 élastique est strictement sous-luminique.
+\end{prop}
+\statut{aucune ; théorème de stabilité}{Forcé (négatif)}{S57}
+
+\begin{prop}[Graviton de Kleinert : $\gamma=1$ (conditionnel)]
+Un champ de courbure \emph{ajouté}, découplé de $c_T$ (donc libre d'être à $c$), à couplage trace-inversé, donne pour une masse statique $S_{00}=S_{11}=S_{22}=S_{33}$, d'où $\gamma=1$ et la déflexion d'Einstein complète (facteur $1+\gamma=2$), contre $\gamma=0$ pour un scalaire.
+\end{prop}
+\statut{secteur de courbure adjoint (au-delà du substrat minimal)}{Conditionnel}{S58}
+
+\begin{prop}[Magnétisme : force de Lorentz]
+Le champ magnétique est la vorticité du flot de phase, $\mathbf B=\nabla\times\mathbf A$ (la circulation = le flux). Une charge couplée minimalement subit
+\[ \mathbf F=q\,\mathbf v\times\mathbf B, \]
+d'où le mouvement cyclotron ($r=mv/qB$, $\omega=qB/m$, $|\mathbf v|$ conservée) ; une charge immobile ne subit aucune force magnétique.
+\end{prop}
+\statut{couplage minimal / analogie hydrodynamique}{Conditionnel}{S59}
+
+\begin{prop}[Lumière = onde de Goldstone transverse]
+Le mode transverse de la phase est une onde électromagnétique classique : $\omega=ck$, $\Box\mathbf A=0$, $\mathbf E\perp\mathbf B\perp\mathbf k$, $|\mathbf E|=c|\mathbf B|$, deux polarisations, énergie le long de $\mathbf k$. Avec Coulomb (S25) et Lorentz (S59), Maxwell classique est assemblé \emph{en ondes}, sans photon-particule.
+\end{prop}
+\statut{jauge $U(1)$ émergente de la phase}{Conditionnel ; $\omega=ck$ Forcé}{S60}
+
+\begin{prop}[Origine latente commune masse/$\Lambda$, moments opposés]
+La masse (habillage latent) et $\Lambda$ (vide latent gravitant) sont deux moments du \emph{même} spectre latent $J(\Omega)$, mais opposés :
+\[ \delta m^2\sim\!\int\!\frac{J}{\Omega^2}d\Omega\ (\text{IR, inertie}),\qquad \Lambda\sim\!\int\! J\,\Omega\,d\Omega\ (\text{UV, raideur}). \]
+Augmenter la rétroaction du substrat fait croître $\Lambda$ sans bouger la masse : l'inversion est la dualité inertie/rétroaction, confirmant $\Lambda=$ tension de rappel (S53). Lien réel en origine ; la magnitude n'est pas transférée.
+\end{prop}
+\statut{dualité structurelle Forcée ; magnitude de $\Lambda$ Ouverte}{Forcé (structure) / Ouvert (magnitude)}{S61, S63}
+
+\begin{prop}[Altermagnétisme depuis phase $\times$ cisaillement]
+Le substrat porte les trois ordres magnétiques. L'altermagnétisme (confirmé expérimentalement en 2024) naît de l'ordre de phase alterné couplé au cisaillement cristallin : la séparation de spin
+\[ \Delta(\mathbf k)\propto \cos k_x-\cos k_y \quad(\text{d-wave}=\text{symétrie sans-trace du spin-2, S43/S54}), \]
+donne une aimantation nette nulle mais des bandes spin-séparées, avec le renversement de signe $\Delta(\pi/2,0)=-\Delta(0,\pi/2)$.
+\end{prop}
+\statut{modèle altermagnétique standard ; ingrédients fournis ; n'explique PAS jauge/générations}{Conditionnel ; null sur jauge/générations}{S62}
+
+
+
+\section*{Arc 10 — La ligne droite finale : murs nommés et simplification}
+
+\begin{prop}[Catastrophe de $\Lambda$ levée par l'invariance d'échelle]
+La divergence $\Lambda\sim\Lambda_{\mathrm{UV}}^4$ provient d'imposer un cutoff. Le substrat critique étant invariant d'échelle (sans échelle UV), l'énergie du vide ne dépend que de l'échelle IR : $\rho\sim 1/L^2$, indépendante du cutoff ($\rho L^2=$ const). Avec $L=$ horizon, l'ordre observé (valeur holographique). La catastrophe disparaît ; reste l'identification $L=$ horizon.
+\end{prop}
+\statut{invariance d'échelle (criticité S31/S55) ; énergie sombre holographique}{Recadrage réel ; magnitude non dérivée}{S64}
+
+\begin{prop}[Racine R1 — algèbre géométrique + battement]
+Une seule algèbre de Clifford de l'espace-temps porte les vecteurs (grade 1 $\to$ mouveurs $\to$ Dirac 3+1, opérateur reconstruit $H^2=p^2+m^2$ à $10^{-17}$) et les bivecteurs (grade 2 $\to$ rotations/courbure $\to$ spin-2 ; fermeture $[S_{12},S_{23}]=2S_{31}$, résidu nul). Le battement est le grade-0 à $c$ (S34). La dynamique de Dirac 3+1 se construit si les mouveurs se composent via le produit géométrique ; les ondes gravitationnelles à $c$ émergent si la courbure prend la raideur du battement (et non du cisaillement, sous-luminique S57), donnant $\gamma=1$ (S58).
+\end{prop}
+\statut{une racine, deux grades ; produit géométrique et couplage courbure--battement posés (naturels)}{Conditionnel ; unifie deux posés}{S71, S72, S73}
+
+\begin{prop}[Racine R2 — criticité et verrouillage cyclique]
+Le seuil de verrouillage des cycles est le point critique $K=1$ où le substrat se tient ; au-delà, les états $1/1,1/2,1/3,\dots$ sont des verrous robustes (largeurs de Farey), fournissant le domaine des structures internes. Le contre-battement rétroactif stabilise un cycle autour d'une amplitude fixe (cycle limite).
+\end{prop}
+\statut{seuil $=$ criticité et cycle limite (dérivés)}{Mécanisme établi ; ne sélectionne pas seul le 3}{S67, S70}
+
+\begin{prop}[Intrants SM irréductibles, et simplification $4\to 2{+}2$]
+Couleur Z$_3$ (P1) et générations (P2) sont deux « 3 » physiquement indépendants : ils ne fusionnent pas (refus de la numérologie ; Z$_3$ n'est pas dérivable des phases du battement, qui sont Z$_2$, S74). P2 est \emph{branché sur la résolution} : la hiérarchie de verrous cycliques est infinie (largeurs décroissantes $1/2>1/3>1/4>\dots$), mais seuls les verrous plus larges que le seuil de résolution (crénelage, socle II) sont observables — trois au-dessus du seuil, les suivants dans le latent (générations plus lourdes, indétectables ; prédiction cohérente avec l'absence de 4\textsuperscript{e} génération légère). Les quatre posés se réduisent à deux racines (R1, R2 — affinant le socle I/III et II) plus ces deux intrants SM.
+\end{prop}
+\statut{réduction honnête ; P2 réduit à « seuil entre 3\textsuperscript{e} et 4\textsuperscript{e} verrou » (calibration physique)}{Établi ; 2 racines $+$ 2 intrants}{S69, S73, S74}
+
+\begin{prop}[Foyer latent et clôture méta-axiomatique]
+Le substrat étant multirésolution, toute structure \emph{interne et invisible} habite le latent : la couleur y est donc automatiquement interne (commutant avec Lorentz), ce qui dissout la tension interne/espace-temps. Le latent fournit le \emph{foyer} mais ne force pas SU(3) (hiérarchie d'échelles, non triplet de directions). Au terme, aucune structure qualitative ne reste sans foyer ; le seul mur irréductible est méta-théorique — toute théorie finit sur des axiomes posés, l'émergence se perdant dans l'infini des résolutions. L'identifier \emph{boucle} la construction (réorganisation cohérente et transparente, non théorie du tout).
+\end{prop}
+\statut{rasoir d'Ockham (foyer déjà existant) ; couleur posée non dérivée}{Posé naturalisé ; clôture honnête}{S75, S74}
+
+\section*{Arc 11 — Les magnitudes, cartographiées}
+
+\begin{prop}[Protocole récursif « est-ce vraiment libre ? »]
+Pour tout paramètre déclaré libre, tester s'il est en réalité \emph{sélectionné} par une dynamique plus profonde, puis recommencer, jusqu'à atteindre soit un invariant forcé, soit une frontière démontrée. Appliqué aux magnitudes : masses $\to$ distance-à-la-criticité $t$ $\to$ coefficient de fermeture. La distance $t$ est elle-même un \emph{attracteur} ($t^\star=\sqrt{y_t/\gamma}$, sélectionné depuis tout départ), donc non réglée à la main.
+\end{prop}
+\statut{récursion dynamique ; corrige trois fermetures prématurées}{Méthode ; $t$ auto-organisé}{S77--S82}
+
+\begin{prop}[Le coefficient de fermeture est forcé par le flux KT]
+L'« équation de flux autonome $K\to K^\star$ » requise existe : c'est le flux de Kosterlitz--Thouless où le substrat siège déjà (S31/S33). Il possède un point fixe \emph{universel} $K^\star=2/\pi$ (saut universel ; $K_R\to 2/\pi$ par le haut, vérifié) et des coefficients forcés. Le coefficient de fermeture/rétroaction est donc \textbf{forcé}, non un paramètre libre.
+\end{prop}
+\statut{flux KT (coefficients $4\pi^3$, saut $2/\pi$) ; identification fermeture$=$raideur critique}{Forcé (invariant KT)}{S86}
+
+\begin{prop}[Unifié en ontologie, un unique datum off-critique en magnitude]
+Masses, $G$, $\Lambda$ sont trois projections d'un même substrat (ontologie unifiée), et tout coefficient de la chaîne est forcé. Mais un $K^\star=2/\pi$ d'ordre 1 donne $t^\star\!\sim\!0{,}63$, d'ordre 1 : \emph{aucune} hiérarchie. La séparation observée ($\sim 10^{19}$ pour $G$, $\sim 10^{-31}$ pour $\Lambda$) vit dans l'unique \textbf{donnée off-critique} — le couplage relevant nu, que nul point fixe ne fixe. Le cadre est clos jusqu'à ce datum (le problème hiérarchie/constante cosmologique, ouvert pour tous) et le mur méta-axiomatique : non une théorie terminée, une théorie entièrement \emph{cartographiée}.
+\end{prop}
+\statut{ontologie unifiée (forcée) ; hiérarchie $=$ datum off-critique (ouvert pour tous)}{Cartographié ; un seul nombre libre nommé}{S80, S82, S86}
+
+\section*{Audit contraintes-contre-paramètres}
+
+\begin{prop}[Sur-détermination dans la catégorie forcée]
+Le cadre comporte $\approx 6$ boutons continus ($\hbar$, $T_{\mathrm{KT}}$, $g$, $m$, $\lambda=G_{\mathrm{eff}}$, $\lambda_{\mathrm{quint}}$) pour $\approx 10$ résultats forcés sans paramètre. Étant \emph{sur-contraint} dans cette catégorie, l'alignement obtenu y est un signal réel, non un artefact d'ajustement. Les structures importées (Gross-Pitaevskii $\to$ Schrödinger, sine-Gordon $\to$ masse, exponentiel $\to$ quintessence) sont des re-descriptions et ne sont pas comptées comme preuve.
+\end{prop}
+\statut{décompte explicite}{Établi}{Audit C}
+
+\section*{Problèmes ouverts (nommés)}
+
+\begin{description}[leftmargin=0.6cm,itemsep=2pt]
+  \item Structure interne : réduite à deux intrants \emph{nommés} et posés — couleur Z$_3$ (P1) et troncature-à-trois des générations (P2) ; le spectre des masses reste \textbf{ouvert} (intrant SM).
+  \item Dynamique de Dirac 3+1 : opérateur reconstruit exactement (S71) ; \textbf{construit} modulo le produit géométrique de l'espace (racine R1).
+  \item Ondes gravitationnelles à $c$ / Einstein complet : \textbf{atteignables} si la courbure prend la raideur du battement (R1, S72).
+  \item Magnitudes (masses, $G$, $\Lambda$) : \textbf{cartographiées} (Arc 11) — unifiées en ontologie, tout coefficient de fermeture \textbf{forcé} (point fixe KT, $2/\pi$, S86) ; reste un \textbf{unique datum off-critique} (le couplage relevant nu $=$ problème hiérarchie/constante cosmologique, ouvert pour tous ; catastrophe $\Lambda$ levée, S64).
+  \item $\hbar$ et le résultat stochastique de Born. \textbf{Adoptés} (constante mesurée / règle commune).
+\end{description}
+
+\bigskip
+\noindent\textbf{Revendication.} Une ré-organisation cohérente et \emph{sur-déterminée} des fondements de la physique établie, sous un principe géométrique-minimal unique, compatible avec le Modèle Standard sans le remplacer ni le surpasser en pouvoir prédictif. Là où le cadre aligne dans la catégorie forcée, il aligne pour de bonnes raisons.
+
+\end{document}
